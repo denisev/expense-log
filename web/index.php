@@ -27,8 +27,7 @@
     <div class="page-header">
       <h1>Expense Log</h1>
     </div>
-    <div ng-view>
-    </div>
+    <div ng-view></div>
   </div>
 </body>
 </html>
