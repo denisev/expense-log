@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-12">
+  <?php # put this in a table to align nicely with the list ?>
+  <table class="table table-condensed">
+      <thead>
+        <tr>
+          <td><?php # use td instead of th to avoid showing extra horizontal lines ?>
+          <button type="button" class="btn btn-primary"
+              ng-click="go('/edit/new')">Add New</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-condensed table-hover">
+      <thead>
+        <tr>
+          <th>Recipient Name</th>
+          <th>Personal Note</th>
+          <th class="text-right">Amount</th>
+          <th class="text-center">Date of transaction</th>
+          <th class="text-center">Receipt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="exp in expenseList"
+          ng-click="go('/edit/'+exp.id)">
+          <td>{{exp.recipient}}</td>
+          <td>{{exp.note}}</td>
+          <td class="text-right">{{exp.amount}}</td>
+          <td class="text-center">{{exp.tr_date}}</td>
+          <td class="text-center"><span ng-show="exp.img_size > 0" class="glyphicon glyphicon-ok" title="Receipt picture"></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
